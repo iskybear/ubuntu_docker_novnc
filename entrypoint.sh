@@ -31,12 +31,12 @@ export HOME=/home/$USERNAME
 echo "root:$USER_PASS" | sudo chpasswd
 echo "$USERNAME:$USER_PASS" | sudo chpasswd
 
-rm -rf /tmp/.X*lock
-rm -rf /tmp/.X11-unix
+sudo rm -rf /tmp/.X*lock
+sudo rm -rf /tmp/.X11-unix
 
 sleep 1; xset s off
 sleep 1; xset s noblank
 
-tigervncserver -SecurityTypes None
+tigervncserver -SecurityTypes None > /dev/null
 sudo sed -i 's/$(hostname)/localhost/g' /usr/share/novnc/utils/launch.sh
-sudo /usr/share/novnc/utils/launch.sh --vnc localhost:5901
+sudo /usr/share/novnc/utils/launch.sh --vnc localhost:5901 > /dev/null

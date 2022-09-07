@@ -19,6 +19,7 @@ RUN cp -rf /etc/apt/sources.list /etc/apt/sources.list.bak \
 RUN apt-get update -y \
  && apt-get install -y \
     git \
+    software-properties-common \
     imagemagick \
     mesa-utils \
     net-tools \
@@ -30,6 +31,14 @@ RUN apt-get update -y \
     tigervnc-xorg-extension \
     x11-apps \
     xfce4 \
+    xfce4-terminal \
+    xfce4-clipman \
+    xfce4-taskmanager \
+    xterm \
+    mousepad \
+    firefox \
+    xauth xinit dbus-x11 \
+    gdebi \
     wget \
     curl \
     bash-completion \
